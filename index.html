@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <div class="container">
+            <div
+                class="button"
+                @click="prevClick">
+                    <i class="fas fa-angle-double-left"></i>
+            </div>
+            <div class="container-images">
+                <img :src="images[currentIndex].url" alt="">
+                <div class="container-image-index">
+                    <div 
+                        v-for="(balls, i) in images"
+                        :class="['image-index', flag ? 'active' : 'disable']"
+                        @click="thisImage(i)">
+                    </div>
+                </div>
+            </div>
+            <div
+                class="button"
+                @click="nextClick">
+                    <i class="fas fa-angle-double-right"></i>
+            </div>
+            {{currentIndex}}
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
